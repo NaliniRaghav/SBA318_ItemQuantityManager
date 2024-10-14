@@ -1,0 +1,33 @@
+
+ 
+html(lang="en")
+  head
+    title= item.id ? 'Update Item' : 'Add New Item'
+    link(rel="stylesheet", href="/styles.css")
+  body
+    h1= item.id ? 'Update Item' : 'Add a New Item'
+    form(action=action method=method)
+      div
+        label(for="name") Item Name:
+        input(type="text" name="name" value=item.name required)
+
+      div
+        label(for="quantity") Quantity:
+        input(type="number" name="quantity" min="1" value=item.quantity required)
+
+      div
+        label(for="category") Category:
+        select(name="category" required)
+          option(value="1" selected=item.category == 1) Fruits
+          option(value="2" selected=item.category == 2) Vegetables
+
+      div
+        label(for="supplier") Supplier:
+        select(name="supplier" required)
+          option(value="1" selected=item.supplier == 1) Acme Corp
+          option(value="2" selected=item.supplier == 2) Fresh Supplies Inc.
+
+      button(type="submit")= item.id ? 'Update Item' : 'Add Item'
+    div
+      a(href="/items" class="btn-back") Back to List
+      a(href="/" class="btn-home") Back to Home

@@ -1,0 +1,14 @@
+
+html(lang="en")
+  head
+    title Categories List
+    link(rel="stylesheet", href="/styles.css")
+  body
+    h1 Categories List
+    table
+      tr
+        th Name
+      each category in categories
+        tr
+          td= category.name
+    a(href="/") Back to Home

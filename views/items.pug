@@ -1,0 +1,27 @@
+
+
+html(lang="en")
+  head
+    title Items List
+    link(rel="stylesheet", href="/styles.css")
+  body
+    h1 Items List
+    table
+      tr
+        th Name
+        th Quantity
+        th Category
+        th Supplier
+        th Actions
+      each item in items
+        tr
+          td= item.name
+          td= item.quantity
+          td= item.category
+          td= item.supplier
+          td
+            a(href=`/items/edit/${item.id}` class="btn-edit") Edit
+            form(action=`/items/delete/${item.id}` method="POST" style="display:inline")
+              button(type="submit" class="btn-delete") Delete
+    a(href="/items/new" class="btn-add") Add New Item
+    a(href="/" class="btn-home") Back to Home
