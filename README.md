@@ -1,8 +1,8 @@
-Item Manager Application
+ItemQuantity Manager Application
 
 Project Description
 
-The Item Manager is a Node.js and Express application that allows users to manage items and their quantities. Additionally, it manages related categories and suppliers. This project demonstrates basic CRUD operations using a RESTful API, a template engine for rendering views, and Express middleware.
+The Item Qty Manager is a Node.js and Express application that allows users to manage items and their quantities. Additionally, it manages related categories and suppliers. This project demonstrates basic CRUD operations using a RESTful API, a template engine for rendering views, and Express middleware.
 
 Requirements
 
@@ -22,13 +22,13 @@ CRUD Operations (Items):
   Template Engine:
   Pug Template Engine is used to render views for the user. The views include pages to display items, categories, and suppliers, as well as forms to add new entries.
 
- GITHUB link:  https://github.com/NaliniRaghav/SBA318-ItemManager
+ GITHUB link:  https://github.com/NaliniRaghav/SBA318_ItemQuantityManager
 
  Update .env file with PORT=4000
   
  RUN
   
-Go to cd SBA318-ItemManager
+Go to cd  SBA318_ItemQuantityManager
 Start the Server
 node index.js
 
