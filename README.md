@@ -58,10 +58,10 @@ Add New Item (POST JSON):
 Method: POST
 URL: http://localhost:4000/items
 Headers:
-Key: Content-Type
+Key: Accept
 Value: application/json
-Body:
-json
+Body: raw
+json 
  
 {
   "name": "Oranges",
@@ -75,7 +75,7 @@ Update an Item (POST JSON):
 Method: POST
 URL: http://localhost:4000/items/:id (Replace :id with the item ID, e.g., http://localhost:4000/items/1)
 Headers:
-Key: Content-Type
+Key: Accept
 Value: application/json
 Body:
 json
@@ -99,8 +99,8 @@ If you encounter any issues, check your terminal for errors or logs that might i
 Ensure Postman Headers are Correct:
 
 For GET requests, ensure you have the header Accept: application/json.
-For POST requests, ensure you have the header Content-Type: application/json and the body is formatted correctly in JSON.
-Check Route Logic:
+For POST requests, ensure you have the header Accept: application/json and the body is formatted correctly in JSON.
+ 
 
 Ensure the route logic checks for the Accept header and responds with JSON when it's set to application/json in Postman.
 
