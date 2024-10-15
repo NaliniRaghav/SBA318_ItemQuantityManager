@@ -1,4 +1,3 @@
-
 import express from 'express';
 import { items } from '../data/items.js';  // Import item data (make sure items.js exports an array of items)
 
@@ -26,7 +25,8 @@ router.get('/edit/:id', (req, res) => {
     return res.status(404).send('Item not found');
   }
 
-  res.render('form', { item, action: `/items/${id}`, method: 'POST' });
+  // Render the form for editing with pre-filled data
+  res.render('form', { item, action: `/items/${id}?_method=PUT`, method: 'POST' });
 });
 
 // POST: Add a new item
@@ -56,8 +56,8 @@ router.post('/', (req, res) => {
   res.redirect('/items');
 });
 
-// POST: Update an existing item
-router.post('/:id', (req, res) => {
+// PUT: Update an existing item
+router.put('/:id', (req, res) => {
   const { id } = req.params;
   const { name, quantity, category, supplier } = req.body;
 
@@ -84,8 +84,8 @@ router.post('/:id', (req, res) => {
   res.redirect('/items');
 });
 
-// POST: Delete an item
-router.post('/delete/:id', (req, res) => {
+// DELETE: Delete an item
+router.delete('/:id', (req, res) => {
   const { id } = req.params;
   const itemIndex = items.findIndex(item => item.id === parseInt(id));
   
